@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500&display=swap');
+
+:root {
+  --cream: #faf7f2;
+  --warm-white: #f5f0e8;
+  --stone: #c8bfb0;
+  --taupe: #8c7f72;
+  --dark: #2c2722;
+  --gold: #b89a6a;
+  --gold-light: #d4b98a;
+  --text: #3a3028;
+  --text-light: #6b5f54;
+  --nav-h: 60px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Heebo', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  direction: rtl;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: var(--nav-h);
+  background: rgba(250,247,242,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200,191,176,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  gap: 1.5rem;
+}
+
+.nav-brand {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1rem;
+  color: var(--dark);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--taupe);
+  font-size: 0.83rem;
+  letter-spacing: 0.07em;
+  transition: color 0.25s;
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+.nav-candle {
+  background: var(--gold);
+  color: white !important;
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.8rem !important;
+  transition: background 0.2s !important;
+}
+.nav-candle:hover { background: var(--dark) !important; }
+
+/* hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px;
+  background: var(--taupe);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ── PAGE CONTENT ── */
+.page-content {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+}
+
+/* ── SECTION BASE ── */
+.section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-full {
+  width: 100%;
+  padding: 5rem 2rem;
+}
+
+.section-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.5rem; }
+h3 { font-size: 1.25rem; }
+
+.divider {
+  width: 40px; height: 1px;
+  background: var(--gold);
+  margin: 1rem 0 2rem;
+  opacity: 0.55;
+}
+
+.divider-center { margin: 1rem auto 2rem; }
+
+p { color: var(--text-light); margin-bottom: 1rem; font-size: 1rem; }
+
+hr.section-hr {
+  border: none;
+  border-top: 1px solid rgba(200,191,176,0.4);
+}
+
+/* ── HERO HOME ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(184,154,106,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 80%, rgba(200,191,176,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-photo-frame {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold-light);
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 40px rgba(184,154,106,0.18), 0 0 0 8px rgba(184,154,106,0.07);
+  animation: fadeUp 1s ease both;
+}
+.hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--warm-white), var(--stone));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; color: var(--taupe);
+}
+
+.hero-label {
+  font-size: 0.72rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold);
+  animation: fadeUp 1s 0s ease both; opacity: 0;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin-top: 0.3rem;
+  animation: fadeUp 1s 0.1s ease both; opacity: 0;
+}
+
+.hero-dates {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1rem; color: var(--taupe);
+  margin-top: 0.2rem;
+  animation: fadeUp 1s 0.2s ease both; opacity: 0;
+}
+
+.hero-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 1.5rem auto;
+  animation: fadeUp 1s 0.3s ease both; opacity: 0;
+}
+
+.hero-quote {
+  max-width: 520px;
+  font-size: 1.05rem; color: var(--text-light);
+  font-style: italic; line-height: 1.9;
+  animation: fadeUp 1s 0.4s ease both; opacity: 0;
+}
+
+.hero-scroll-hint {
+  margin-top: 3rem;
+  font-size: 0.75rem; letter-spacing: 0.15em;
+  color: var(--stone); text-transform: uppercase;
+  animation: fadeUp 1s 0.7s ease both; opacity: 0;
+}
+
+/* ── GALLERY INDEX (cards on homepage) ── */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.album-card {
+  text-decoration: none;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(200,191,176,0.4);
+  background: white;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+}
+.album-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(44,39,34,0.1); }
+
+.album-thumb {
+  width: 100%; height: 180px;
+  object-fit: cover;
+  display: block;
+  background: var(--warm-white);
+}
+
+.album-thumb-placeholder {
+  width: 100%; height: 180px;
+  background: linear-gradient(135deg, var(--warm-white), var(--stone));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+}
+
+.album-info {
+  padding: 1.1rem 1.3rem;
+}
+
+.album-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.1rem; color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.album-count {
+  font-size: 0.78rem; color: var(--taupe);
+}
+
+.album-arrow {
+  position: absolute;
+  bottom: 1.1rem; left: 1.3rem;
+  font-size: 1.1rem; color: var(--gold);
+  transition: transform 0.25s;
+}
+.album-card:hover .album-arrow { transform: translateX(-4px); }
+
+/* ── GALLERY PAGE ── */
+.gallery-page-hero {
+  background: var(--warm-white);
+  border-bottom: 1px solid rgba(200,191,176,0.4);
+  padding: 3.5rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.gallery-page-hero .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--taupe);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+.gallery-page-hero .back-link:hover { color: var(--gold); }
+
+.masonry {
+  columns: 4 220px;
+  gap: 10px;
+  padding: 2.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.masonry-item img {
+  width: 100%; display: block;
+  transition: transform 0.5s ease;
+}
+.masonry-item:hover img { transform: scale(1.04); }
+
+/* ── LIGHTBOX ── */
+#lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(44,39,34,0.95);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 90vw; max-height: 85vh;
+  object-fit: contain; border-radius: 3px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+}
+#lb-close {
+  position: absolute; top: 1.2rem; left: 1.5rem;
+  background: none; border: none;
+  color: rgba(255,255,255,0.7); font-size: 2.2rem;
+  cursor: pointer; line-height: 1; transition: color 0.2s;
+}
+#lb-close:hover { color: white; }
+#lb-prev, #lb-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: none;
+  color: rgba(255,255,255,0.8); font-size: 1.8rem;
+  padding: 0.8rem 1rem; cursor: pointer;
+  border-radius: 4px; transition: background 0.2s;
+}
+#lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,0.2); }
+#lb-prev { right: 1.5rem; }
+#lb-next { left: 1.5rem; }
+#lb-counter {
+  position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.1em;
+}
+
+/* ── AUDIO ── */
+.audio-wrap {
+  background: var(--warm-white);
+  border-top: 1px solid rgba(200,191,176,0.4);
+}
+
+audio {
+  width: 100%; max-width: 500px;
+  margin-top: 1rem;
+  accent-color: var(--gold);
+}
+
+/* ── VIDEO ── */
+.video-wrap {
+  position: relative; padding-bottom: 56.25%;
+  border-radius: 8px; overflow: hidden;
+  background: var(--dark); margin-top: 1.5rem;
+  box-shadow: 0 12px 50px rgba(44,39,34,0.14);
+}
+.video-wrap video, .video-wrap iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; border: none;
+}
+
+/* ── CANDLE ── */
+.candle-section { text-align: center; border-top: 1px solid rgba(200,191,176,0.4); }
+
+.candles-wall {
+  display: flex; flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem; margin: 2rem 0; min-height: 60px;
+}
+
+.candle-card {
+  background: var(--warm-white);
+  border: 1px solid rgba(200,191,176,0.4);
+  border-radius: 8px; padding: 1rem 1.4rem;
+  max-width: 200px; text-align: center;
+  animation: fadeUp 0.5s ease both;
+}
+.candle-card .flame { font-size: 1.6rem; }
+.candle-card .sender { font-size: 0.82rem; font-weight: 500; color: var(--dark); margin-top: 0.3rem; }
+.candle-card .msg { font-size: 0.78rem; color: var(--taupe); margin: 0.3rem 0 0; line-height: 1.5; }
+
+.candle-form { max-width: 480px; margin: 0 auto; text-align: right; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.3rem; }
+label { font-size: 0.8rem; color: var(--taupe); }
+input, textarea, select {
+  background: white; border: 1px solid var(--stone);
+  border-radius: 6px; padding: 0.65rem 0.9rem;
+  font-family: 'Heebo', sans-serif; font-size: 0.9rem;
+  color: var(--dark); transition: border-color 0.2s; width: 100%;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); }
+textarea { resize: vertical; min-height: 90px; margin-bottom: 1rem; }
+
+.btn-gold {
+  background: var(--gold); color: white;
+  border: none; border-radius: 6px;
+  padding: 0.8rem 2.5rem;
+  font-family: 'Heebo', sans-serif; font-size: 0.9rem;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+}
+.btn-gold:hover { background: var(--dark); transform: translateY(-1px); }
+
+.form-note { font-size: 0.76rem; color: var(--stone); margin-top: 0.8rem; text-align: center; margin-bottom: 0; }
+.success-msg {
+  display: none; background: #f0f7f0;
+  border: 1px solid #b8d4b8; color: #3a6b3a;
+  padding: 1rem 1.5rem; border-radius: 8px;
+  margin-top: 1rem; font-size: 0.9rem; text-align: center;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(200,191,176,0.4);
+  text-align: center; padding: 2.5rem 1rem;
+  font-size: 0.78rem; color: var(--stone); letter-spacing: 0.05em;
+}
+footer a { color: var(--gold); text-decoration: none; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .nav-links { display: none; flex-direction: column; position: absolute; top: var(--nav-h); right: 0; left: 0; background: var(--cream); border-bottom: 1px solid var(--stone); padding: 1.2rem 2rem; gap: 1.2rem; }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: flex; }
+  .form-row { grid-template-columns: 1fr; }
+  .masonry { columns: 2 140px; }
+  .albums-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .albums-grid { grid-template-columns: 1fr; }
+}

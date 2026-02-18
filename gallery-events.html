@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אירועים מיוחדים – דוד אהרוני</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-brand" href="index.html">דוד אהרוני ז״ל</a>
+  <div class="nav-links">
+    <a href="index.html#story">סיפור חייו</a>
+    <a href="index.html#media">שמע ווידאו</a>
+    <a href="index.html#albums" class="active">גלריות</a>
+    <a href="index.html#candle" class="nav-candle">🕯️ הדלק נר</a>
+  </div>
+  <button class="nav-toggle" aria-label="תפריט">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-content">
+
+  <!-- כותרת האלבום -->
+  <div class="gallery-page-hero">
+    <a class="back-link" href="index.html#albums">→ &nbsp;חזרה לכל הגלריות</a>
+    <div class="section-label">אלבום</div>
+    <h2>אירועים מיוחדים</h2>
+    <div class="divider divider-center"></div>
+    <p style="max-width:460px; margin:0 auto; font-size:0.9rem;">
+      <!-- תיאור קצר של האלבום -->
+      בר מצווה, חתונות, אירועים משפחתיים וכל רגע שהשאיר חותם.
+    </p>
+  </div>
+
+  <!-- גריד תמונות -->
+  <!--
+    הוראות הוספת תמונות:
+    ════════════════════
+    1. שים את התמונות בתיקייה: images/events/
+    2. לכל תמונה הוסף בלוק כמו הדוגמה למטה
+    3. החלף את src ואת alt
+    4. loading="lazy" שומר על ביצועים טובים גם עם 200 תמונות
+
+    דוגמה:
+    <div class="masonry-item">
+      <img src="images/events/photo01.jpg" alt="דוד בגיל 5" loading="lazy" />
+    </div>
+  -->
+  <div class="masonry" id="galleryGrid">
+
+    <!-- תמונות PLACEHOLDER – החלף אותן! -->
+    <div class="masonry-item"><img src="https://placehold.co/400x520/f5f0e8/8c7f72?text=תמונה+1" alt="תמונה 1" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x300/f5f0e8/8c7f72?text=תמונה+2" alt="תמונה 2" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x450/f5f0e8/8c7f72?text=תמונה+3" alt="תמונה 3" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x360/f5f0e8/8c7f72?text=תמונה+4" alt="תמונה 4" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x500/f5f0e8/8c7f72?text=תמונה+5" alt="תמונה 5" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x280/f5f0e8/8c7f72?text=תמונה+6" alt="תמונה 6" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x420/f5f0e8/8c7f72?text=תמונה+7" alt="תמונה 7" loading="lazy" /></div>
+    <div class="masonry-item"><img src="https://placehold.co/400x340/f5f0e8/8c7f72?text=תמונה+8" alt="תמונה 8" loading="lazy" /></div>
+
+    <!--
+      המשך הוספת תמונות אמיתיות כאן...
+      <div class="masonry-item">
+        <img src="images/events/photo09.jpg" alt="תיאור התמונה" loading="lazy" />
+      </div>
+    -->
+
+  </div>
+
+</div><!-- /page-content -->
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <button id="lb-close" aria-label="סגור">×</button>
+  <button id="lb-prev" aria-label="הקודם">‹</button>
+  <img id="lb-img" src="" alt="" />
+  <button id="lb-next" aria-label="הבא">›</button>
+  <div id="lb-counter"></div>
+</div>
+
+<footer>
+  <div>לזכרו של <strong>דוד אהרוני</strong> ז״ל</div>
+  <div style="margin-top:0.4rem; font-size:0.7rem;">
+    <a href="index.html">← חזרה לדף הבית</a>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

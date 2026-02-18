@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>לזכרו של דוד אהרוני</title>
+  <meta name="description" content="אתר הנצחה לזכרו של דוד אהרוני ז״ל" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-brand" href="index.html">דוד אהרוני ז״ל</a>
+  <div class="nav-links">
+    <a href="#story">סיפור חייו</a>
+    <a href="#media">שמע ווידאו</a>
+    <a href="#albums">גלריות</a>
+    <a href="#candle" class="nav-candle">🕯️ הדלק נר</a>
+  </div>
+  <button class="nav-toggle" aria-label="תפריט">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-content">
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-photo-frame">
+      <!--
+        החלף בתמונת דוד:
+        <img src="images/david-main.jpg" alt="דוד אהרוני" />
+      -->
+      <div class="hero-photo-placeholder">✦</div>
+    </div>
+
+    <div class="hero-label">לזכרו של</div>
+    <h1 class="hero-name">דוד אהרוני</h1>
+
+    <p class="hero-dates">
+      <!-- הכנס תאריכים -->
+      א׳ תשרי תש״פ &nbsp;·&nbsp; י״ד תשרי תשפ״ד
+    </p>
+
+    <div class="hero-line"></div>
+
+    <p class="hero-quote">
+      ״כתוב כאן ציטוט שמאפיין את דוד – משפט שלו, פסוק שהיה חשוב לו, או תיאור שמלכד את מי שהיה.״
+    </p>
+
+    <div class="hero-scroll-hint">↓ &nbsp; גלול למטה</div>
+  </section>
+
+  <hr class="section-hr" />
+
+  <!-- ── STORY ── -->
+  <div class="section reveal" id="story">
+    <div class="section-label">הכר אותו</div>
+    <h2>סיפור חייו</h2>
+    <div class="divider"></div>
+
+    <p>
+      דוד אהרוני נולד ב... וגדל ב...
+      כתוב כאן על ילדותו, אישיותו, הדברים שאהב, ומה שאפיין אותו כאדם.
+    </p>
+    <p>
+      בשירותו הצבאי ב... הצטיין דוד ב...
+      כתוב על דרכו הצבאית, יחידתו, ועל הקשרים שיצר שם.
+    </p>
+    <p>
+      דוד נפל בקרב ב... ומורשתו ממשיכה לחיות בלבבות כל מי שהכיר אותו ואהב אותו.
+    </p>
+  </div>
+
+  <hr class="section-hr" />
+
+  <!-- ── AUDIO + VIDEO ── -->
+  <div id="media" class="section-full audio-wrap">
+    <div class="section-inner">
+
+      <!-- AUDIO -->
+      <div class="reveal" style="margin-bottom: 3.5rem;">
+        <div class="section-label">להאזנה</div>
+        <h2>בקולו</h2>
+        <div class="divider"></div>
+        <p>הקלטה / שיר / דברים שאמר דוד.</p>
+
+        <!--
+          החלף את src בנתיב לקובץ האודיו:
+          <audio controls src="audio/david.mp3"></audio>
+        -->
+        <audio controls>
+          <source src="audio/YOUR_AUDIO_FILE.mp3" type="audio/mpeg" />
+          הדפדפן שלך אינו תומך בנגן אודיו.
+        </audio>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="reveal">
+        <div class="section-label">וידאו</div>
+        <h2>בתנועה</h2>
+        <div class="divider"></div>
+        <p>סרטון קצר לזכרו של דוד.</p>
+
+        <div class="video-wrap">
+          <!--
+            קובץ מקומי: <video controls><source src="video/david.mp4" type="video/mp4" /></video>
+            יוטיוב:     <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+          -->
+          <video controls>
+            <source src="video/YOUR_VIDEO_FILE.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-hr" />
+
+  <!-- ── ALBUMS INDEX ── -->
+  <div class="section reveal" id="albums">
+    <div class="section-label">גלריות</div>
+    <h2>תמונות לפי אירועים</h2>
+    <div class="divider"></div>
+    <p>בחר אלבום לצפייה בתמונות.</p>
+
+    <div class="albums-grid">
+
+      <!--
+        לכל אלבום:
+        - href = קישור לעמוד הגלריה
+        - src  = תמונת שער של האלבום (אחת מהתמונות שבאלבום)
+        - שנה את הכותרת ומספר התמונות לפי הצורך
+
+        אם אין לך תמונת שער עדיין, השאר את ה-placeholder.
+      -->
+
+      <a class="album-card" href="gallery-childhood.html">
+        <div class="album-thumb-placeholder">🏠</div>
+        <!-- <img class="album-thumb" src="images/childhood/cover.jpg" alt="ילדות" /> -->
+        <div class="album-info">
+          <div class="album-title">ילדות ומשפחה</div>
+          <div class="album-count">תמונות מהבית, מסביב המשפחה והשנים הראשונות</div>
+        </div>
+        <div class="album-arrow">←</div>
+      </a>
+
+      <a class="album-card" href="gallery-army.html">
+        <div class="album-thumb-placeholder">🎖️</div>
+        <!-- <img class="album-thumb" src="images/army/cover.jpg" alt="שירות צבאי" /> -->
+        <div class="album-info">
+          <div class="album-title">שירות צבאי</div>
+          <div class="album-count">תמונות מהשירות, מהיחידה ומהחברים בצבא</div>
+        </div>
+        <div class="album-arrow">←</div>
+      </a>
+
+      <a class="album-card" href="gallery-friends.html">
+        <div class="album-thumb-placeholder">🤝</div>
+        <!-- <img class="album-thumb" src="images/friends/cover.jpg" alt="חברים" /> -->
+        <div class="album-info">
+          <div class="album-title">חברים ובילויים</div>
+          <div class="album-count">תמונות עם חברים, טיולים ורגעים של שמחה</div>
+        </div>
+        <div class="album-arrow">←</div>
+      </a>
+
+      <a class="album-card" href="gallery-events.html">
+        <div class="album-thumb-placeholder">🎉</div>
+        <!-- <img class="album-thumb" src="images/events/cover.jpg" alt="אירועים" /> -->
+        <div class="album-info">
+          <div class="album-title">אירועים מיוחדים</div>
+          <div class="album-count">בר מצווה, חתונות, אירועים משפחתיים</div>
+        </div>
+        <div class="album-arrow">←</div>
+      </a>
+
+      <!--
+        להוספת אלבום נוסף: העתק את ה-<a class="album-card"> ... </a> הבא,
+        צור קובץ HTML חדש (בדומה ל-gallery-childhood.html) ועדכן את ה-href.
+      -->
+
+    </div>
+  </div>
+
+  <hr class="section-hr" />
+
+  <!-- ── CANDLE ── -->
+  <div class="section candle-section reveal" id="candle">
+    <div class="section-label">זיכרון</div>
+    <h2>הדלקת נר</h2>
+    <div class="divider divider-center"></div>
+    <p style="max-width:440px; margin: 0 auto 1.5rem;">השאירו נר זיכרון ומילים מהלב. כל הנרות יוצגו כאן לאחר אישור.</p>
+
+    <!-- נרות קיימים -->
+    <div class="candles-wall" id="candlesWall">
+      <div class="candle-card">
+        <div class="flame">🕯️</div>
+        <div class="sender">משפחת לוי</div>
+        <div class="msg">לעולם בלבבנו. גיבור אמיתי.</div>
+      </div>
+      <div class="candle-card">
+        <div class="flame">🕯️</div>
+        <div class="sender">חברים מהפלוגה</div>
+        <div class="msg">אחי לנצח. זוכרים ומתגעגעים.</div>
+      </div>
+    </div>
+
+    <!--
+      הירשם ב-formspree.io וקבל YOUR_FORM_ID
+      החלף בשורת ה-action למטה
+    -->
+    <form class="candle-form" id="candleForm"
+          action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="c-name">שמך</label>
+          <input type="text" id="c-name" name="name" placeholder="ישראל ישראלי" required />
+        </div>
+        <div class="form-group">
+          <label for="c-rel">קשר לדוד</label>
+          <input type="text" id="c-rel" name="relation" placeholder="חבר / קרוב משפחה" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="c-msg">הודעה</label>
+        <textarea id="c-msg" name="message" placeholder="כתוב מילים מהלב..." required></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="🕯️ נר זיכרון חדש – דוד אהרוני" />
+      <button type="submit" class="btn-gold">🕯️ &nbsp;הדלק נר</button>
+      <p class="form-note">ההודעה תישלח למנהל האתר ותתווסף לאחר אישור.</p>
+      <div class="success-msg" id="successMsg">🕯️ הנר הודלק. תודה על המילים היפות.</div>
+    </form>
+  </div>
+
+</div><!-- /page-content -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>לזכרו של <strong>דוד אהרוני</strong> ז״ל</div>
+  <div style="margin-top:0.4rem; font-size:0.7rem;">
+    פניות ועדכונים:
+    <a href="mailto:YOUR_EMAIL@gmail.com">YOUR_EMAIL@gmail.com</a>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  // Candle form
+  const form = document.getElementById('candleForm');
+  const wall = document.getElementById('candlesWall');
+  const succ = document.getElementById('successMsg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        const card = document.createElement('div');
+        card.className = 'candle-card';
+        card.innerHTML = `<div class="flame">🕯️</div>
+          <div class="sender">${data.get('name') || 'אנונימי'}</div>
+          <div class="msg">${data.get('message') || ''}</div>`;
+        wall.appendChild(card);
+        succ.style.display = 'block';
+        form.reset();
+        setTimeout(() => succ.style.display = 'none', 6000);
+      }
+    } catch { alert('אירעה שגיאה. נסה שוב.'); }
+  });
+</script>
+</body>
+</html>
